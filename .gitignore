@@ -32,3 +32,6 @@ yarn-error.log*
 
 # dependencies
 /node_modules
+
+# Custom
+tutorial.md
