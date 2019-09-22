@@ -8,10 +8,7 @@
 		<b-nav class="navbar navbar-expand-sm navbar-light border-bottom justify-content-between">
 			<a class="navbar-brand" href="/">zlyfer_vebsite</a>
 			<div class="navbar-nav">
-				<b-nav-item class="nav-item nav-link active" to="/Grid">Grid</b-nav-item>
-				<b-nav-item class="nav-item nav-link active" to="/List">List</b-nav-item>
-				<b-nav-item class="nav-item nav-link active" to="/List2">List2</b-nav-item>
-				<b-nav-item class="nav-item nav-link active" to="/Blank2">Blank2</b-nav-item>
+				<b-nav-item class="nav-item nav-link active" to="/blank">Blank</b-nav-item>
 			</div>
 		</b-nav>
 	</div>
