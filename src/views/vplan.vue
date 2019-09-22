@@ -1,5 +1,5 @@
 ﻿<template>
-	<p>Wello Horld!</p>
+	<p>Wello Horld!!</p>
 </template>
 
 <script>
