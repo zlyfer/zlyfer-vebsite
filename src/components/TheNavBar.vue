@@ -1,12 +1,10 @@
-﻿//TODO Web Template Studio: Add a new link in the NavBar for your page here.
-// A skip link is included as an accesibility best practice. For more information visit https://www.w3.org/WAI/WCAG21/Techniques/general/G1.
-<template>
+﻿<template>
 	<div>
 		<div class="skipLink">
 			<a href="#mainContent">Skip to Main Content</a>
 		</div>
 		<b-nav class="navbar navbar-expand-sm navbar-light border-bottom justify-content-between">
-			<a class="navbar-brand" href="/">zlyfer_vebsite</a>
+			<a class="navbar-brand" href="/">zlyfer</a>
 			<div class="navbar-nav">
 				<b-nav-item class="nav-item nav-link active" to="/blank">Blank</b-nav-item>
 			</div>
