@@ -1,11 +1,3 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
-
-# vscode configuration
-.vscode/
-
-.DS_Store
-
-/build
 
 # local env files
 .env.local
@@ -25,10 +17,8 @@ yarn-error.log*
 *.sln
 *.sw*
 
-
 # production
 /server/build
-
 
 # dependencies
 /node_modules
