@@ -1,5 +1,8 @@
 ﻿<template>
-	<p>Hello World!!!</p>
+	<div id="vplan">
+		<p>Hello World!!</p>
+		<p>Still in development!!</p>
+	</div>
 </template>
 
 <script>
