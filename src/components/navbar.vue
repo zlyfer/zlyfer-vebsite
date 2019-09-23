@@ -1,12 +1,17 @@
 ﻿<template>
 	<div>
-		<b-nav class="navbar navbar-expand-sm navbar-light border-bottom justify-content-between">
-			<a class="navbar-brand" href="/">zlyfer</a>
-			<div class="navbar-nav">
-				<b-nav-item class="nav-item nav-link active" to="/vplan">VPlan</b-nav-item>
-				<b-nav-item class="nav-item nav-link active" to="/api">API</b-nav-item>
-			</div>
-		</b-nav>
+		<b-navbar toggleable="lg" type="dark" variant="info">
+			<b-navbar-brand href="#" to="/">zlyfer</b-navbar-brand>
+
+			<b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+			<b-collapse id="nav-collapse" is-nav>
+				<b-navbar-nav>
+					<b-nav-item to="vplan">VPlan</b-nav-item>
+					<b-nav-item to="api">API</b-nav-item>
+				</b-navbar-nav>
+			</b-collapse>
+		</b-navbar>
 	</div>
 </template>
 
