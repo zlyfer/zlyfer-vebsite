@@ -47,7 +47,7 @@
 		"vue-template-compiler": "^2.5.21"
 	},
 	"scripts": {
-		"updatezlyfa": "git pull https://github.com/zlyfer/zlyfer-vebsite & npm install & npm run build",
+		"updatezlyfa": "git pull https://github.com/zlyfer/zlyfer-vebsite && npm install && npm run build",
 		"start": "concurrently \"yarn start-frontend || npm run start-frontend\" \"yarn start-backend || npm run start-backend\"",
 		"start-backend": "nodemon server/server.js",
 		"start-frontend": "vue-cli-service serve --open",
