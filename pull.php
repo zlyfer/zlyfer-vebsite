@@ -1,1 +1,1 @@
-<?php exec("cd ../../; git pull https://github.com/zlyfer/zlyfer-vebsite; npm install; npm run build"); ?>
+<?php exec("cd ../../; npm run updatezlyfa"); ?>
