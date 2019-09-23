@@ -2,10 +2,11 @@
 import VueRouter from "vue-router";
 
 import vplan from "@/views/vplan.vue";
+import api from "@/views/api.vue";
+
 Vue.use(VueRouter);
 
-// TODO Web Template Studio: Add routes for your new pages here.
 export default new VueRouter({
 	mode: "history",
-	routes: [{ path: "/vplan", component: vplan }]
+	routes: [{ path: "/vplan", component: vplan }, { path: "/api", component: api }]
 });

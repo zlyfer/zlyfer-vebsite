@@ -7,31 +7,32 @@
 			<a class="navbar-brand" href="/">zlyfer</a>
 			<div class="navbar-nav">
 				<b-nav-item class="nav-item nav-link active" to="/vplan">VPlan</b-nav-item>
+				<b-nav-item class="nav-item nav-link active" to="/api">API</b-nav-item>
 			</div>
 		</b-nav>
 	</div>
 </template>
 
 <script>
-export default {
-	name: "TheNavBar"
-};
+	export default {
+		name: "TheNavBar"
+	};
 </script>
 
 <style scoped>
-.skipLink a {
-	position: absolute;
-	left: -100px;
-	top: -100px;
-}
+	.skipLink a {
+		position: absolute;
+		left: -100px;
+		top: -100px;
+	}
 
-.skipLink a:focus {
-	position: fixed;
-	z-index: 1000;
-	top: 0;
-	left: 0;
-	padding: 10px;
-	color: #ffffff;
-	background: #000000;
-}
+	.skipLink a:focus {
+		position: fixed;
+		z-index: 1000;
+		top: 0;
+		left: 0;
+		padding: 10px;
+		color: #ffffff;
+		background: #000000;
+	}
 </style>
