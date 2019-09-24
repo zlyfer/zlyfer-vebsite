@@ -1,5 +1,7 @@
 ﻿const CONSTANTS = {};
 
-CONSTANTS.ERROR_MESSAGE = {};
+CONSTANTS.VPLAN = {};
+CONSTANTS.VPLAN.CURRENT = "https://api.zlyfer.net/vplan/";
+CONSTANTS.VPLAN.ALL = "https://api.zlyfer.net/vplan/all/";
 
-export default CONSTANTS;
+module.exports = CONSTANTS;
