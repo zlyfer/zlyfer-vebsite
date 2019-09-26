@@ -11,4 +11,5 @@ if (fs.existsSync("./build")) {
 childProcess.execSync("vue-cli-service build", { stdio: "inherit" });
 
 fse.moveSync("./build", "./server/build", { overwrite: true });
-fse.copySync("./pull.php", "./server/build/pull.php");
+
+// fse.copySync("./pull.php", "./server/build/pull.php");
