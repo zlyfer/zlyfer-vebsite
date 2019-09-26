@@ -10,7 +10,6 @@
 					<b-nav-item-dropdown text="BBS2 Emden">
 						<b-dropdown-header>Aktuelle Versionen</b-dropdown-header>
 						<b-dropdown-item to="vplan">Vertretungsplan</b-dropdown-item>
-						<b-dropdown-item to="apidoc">Vertretungsplan API</b-dropdown-item>
 						<b-dropdown-divider></b-dropdown-divider>
 						<b-dropdown-header>Alte Versionen</b-dropdown-header>
 						<b-dropdown-item target="_blank" href="https://vplan.zlyfer.net"

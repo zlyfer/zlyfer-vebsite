@@ -1,7 +1,11 @@
 ﻿const CONSTANTS = {};
 
 CONSTANTS.VPLAN = {};
-CONSTANTS.VPLAN.CURRENT = "https://api.zlyfer.net/vplan/";
-CONSTANTS.VPLAN.ALL = "https://api.zlyfer.net/vplan/all/";
+CONSTANTS.VPLAN.SERVER = "https://api.zlyfer.net/";
+// CONSTANTS.VPLAN.SERVER = "http://localhost:8080/"; // DEV
+CONSTANTS.VPLAN.DB = "latest/";
+// CONSTANTS.VPLAN.DB = "all/"; // ??
+CONSTANTS.VPLAN.VPLAN = CONSTANTS.VPLAN.SERVER + "vplan/" + CONSTANTS.VPLAN.DB;
+CONSTANTS.VPLAN.DATES = CONSTANTS.VPLAN.SERVER + "vplan/" + CONSTANTS.VPLAN.DB + "dates/";
 
 module.exports = CONSTANTS;

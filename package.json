@@ -13,7 +13,6 @@
 		"express": "^4.16.4",
 		"fs-extra": "8.1.0",
 		"morgan": "^1.9.1",
-		"swagger-ui": "^3.23.11",
 		"vue": "^2.6.6",
 		"vue-axios": "^2.1.4",
 		"vue-router": "^3.0.4"
@@ -38,14 +37,16 @@
 		}
 	},
 	"devDependencies": {
-		"concurrently": "^4.1.0",
-		"nodemon": "^1.18.10",
 		"@vue/cli-plugin-babel": "^3.5.0",
 		"@vue/cli-plugin-eslint": "^3.5.0",
 		"@vue/cli-service": "^3.5.0",
 		"babel-eslint": "^10.0.1",
+		"concurrently": "^4.1.0",
 		"eslint": "^5.8.0",
 		"eslint-plugin-vue": "^5.0.0",
+		"node-sass": "^4.12.0",
+		"nodemon": "^1.18.10",
+		"sass-loader": "^8.0.0",
 		"vue-template-compiler": "^2.5.21"
 	},
 	"scripts": {

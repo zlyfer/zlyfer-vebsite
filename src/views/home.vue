@@ -1,7 +1,7 @@
 <template>
 	<div id="home">
 		<b-jumbotron
-			header="Wilkommen auf zlyfer.net!"
+			header="zlyfer.net!!"
 			lead="Meine persönliche Website mit meinen Projekten"
 		>
 			<hr class="my-4" />
