@@ -13,8 +13,9 @@
 
 		<b-card title="Card Title" no-body id="tableCard">
 			<b-card-header header-tag="nav" id="tableCardHeader">
-				<b-nav pills fill>
+				<b-nav fill>
 					<b-nav-item
+						class="planselect"
 						v-for="date in dates"
 						:key="date.id"
 						:active="activePlan == date.id"
@@ -22,18 +23,15 @@
 						><span>
 							{{ date.name }}
 						</span>
-						<!-- FIXME: Variant -->
-						<!-- :variant="`${activePlan == date.id ? 'primary' : 'light'}`" -->
+						<!-- :variant="`${activePlan == date.id ? 'light' : 'primary'}`" -->
 						<b-badge>{{ plans[date.id].length }}</b-badge></b-nav-item
 					>
 				</b-nav>
 			</b-card-header>
 			<b-card-body id="tableCardBody">
 				<b-table
-					fixed
 					responsive
 					hover
-					sticky-header
 					head-variant="light"
 					:items="plans[activePlan]"
 					:fields="fields"
@@ -94,7 +92,14 @@
 				currentBusy: "",
 				activePlan: "",
 				plans: {},
-				fields: ["Kurs", "Stunde", "Fach", "Raum", "Lehrer", "Info"],
+				fields: [
+					{ label: "Kurs", key: "Kurs", stickyColumn: true },
+					"Stunde",
+					"Fach",
+					"Raum",
+					"Lehrer",
+					"Info"
+				],
 				dates: {}
 			};
 		},
@@ -187,5 +192,14 @@
 	#loadingSpinner,
 	#loadingText {
 		margin-right: 10px;
+	}
+	tr {
+		border: none;
+	}
+	.planselect .nav-link {
+		border: 1px solid var(--light) !important;
+	}
+	.planselect .nav-link.active {
+		border: 1px solid var(--primary) !important;
 	}
 </style>
