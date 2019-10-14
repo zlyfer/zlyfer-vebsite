@@ -129,8 +129,10 @@
 				r.data.entries.forEach(e => {
 					if (!Object.keys(this.plans).includes(e["Datum"])) {
 						this.plans[e["Datum"]] = [];
-					} else this.plans[e["Datum"]].push(e);
+					}
+					this.plans[e["Datum"]].push(e);
 				});
+				console.log(this.plans);
 
 				// Style rows and cells:
 				for (let plan in this.plans) {
