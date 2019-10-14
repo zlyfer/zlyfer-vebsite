@@ -20,12 +20,13 @@
 						:key="date.id"
 						:active="activePlan == date.id"
 						v-on:click="activePlan = date.id"
-						><span>
+					>
+						<span>
 							{{ date.name }}
 						</span>
 						<!-- :variant="`${activePlan == date.id ? 'light' : 'primary'}`" -->
-						<b-badge>{{ plans[date.id].length }}</b-badge></b-nav-item
-					>
+						<b-badge variant="primary">{{ plans[date.id].length }} </b-badge>
+					</b-nav-item>
 				</b-nav>
 			</b-card-header>
 			<b-card-body id="tableCardBody">
@@ -176,10 +177,14 @@
 	#oldButton {
 		margin-left: 10px;
 	}
-	.b-table-sticky-header {
+	.b-table-sticky-header,
+	.b-table {
 		margin-bottom: 0 !important;
 		min-height: 100% !important;
 		height: 100% !important;
+	}
+	.table-responsive {
+		margin-bottom: 0 !important;
 	}
 	#tableCard {
 		border: none !important;
