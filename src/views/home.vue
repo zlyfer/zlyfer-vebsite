@@ -9,7 +9,7 @@
 				Dies ist die neuste überarbeitete Version. Von Zeit zu Zeit werden alle
 				alten bekannten Features implementiert.
 			</p>
-			<b-button variant="primary" target="_blank" href="https://zlyfer.net">
+			<b-button variant="primary" target="_blank" href="https://old.zlyfer.net">
 				Alte Version
 			</b-button>
 		</b-jumbotron>

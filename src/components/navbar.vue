@@ -12,10 +12,14 @@
 						<b-dropdown-item to="vplan">Vertretungsplan</b-dropdown-item>
 						<b-dropdown-divider></b-dropdown-divider>
 						<b-dropdown-header>Alte Versionen</b-dropdown-header>
-						<b-dropdown-item target="_blank" href="https://vplan.zlyfer.net"
+						<b-dropdown-item
+							target="_blank"
+							href="https://old.zlyfer.net/sites/bbs2-emden/vertretungsplan/"
 							>Vertretungsplan</b-dropdown-item
 						>
-						<b-dropdown-item target="_blank" href="https://api.vplan.zlyfer.net"
+						<b-dropdown-item
+							target="_blank"
+							href="https://old.zlyfer.net/sites/bbs2-emden/vertretungsplan-api/"
 							>Vertretungsplan API</b-dropdown-item
 						>
 					</b-nav-item-dropdown>

@@ -6,7 +6,7 @@
 				id="oldButton"
 				variant="primary"
 				target="_blank"
-				href="http://vplan.zlyfer.net"
+				href="https://old.zlyfer.net/sites/bbs2-emden/vertretungsplan/"
 				>Alte Version</b-button
 			>
 		</b-alert>
