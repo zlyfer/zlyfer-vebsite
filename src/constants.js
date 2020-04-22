@@ -1,11 +1,9 @@
-﻿const CONSTANTS = {};
+﻿// jshint esversion: 9
+
+const CONSTANTS = {};
 
 CONSTANTS.VPLAN = {};
-CONSTANTS.VPLAN.SERVER = "https://api.zlyfer.net/";
-// CONSTANTS.VPLAN.SERVER = "http://localhost:8080/"; // DEV
-CONSTANTS.VPLAN.DB = "latest/";
-// CONSTANTS.VPLAN.DB = "all/"; // ??
-CONSTANTS.VPLAN.VPLAN = CONSTANTS.VPLAN.SERVER + "vplan/" + CONSTANTS.VPLAN.DB;
-CONSTANTS.VPLAN.DATES = CONSTANTS.VPLAN.SERVER + "vplan/" + CONSTANTS.VPLAN.DB + "dates/";
+// CONSTANTS.VPLAN.API = "https://api.zlyfer.net/vplan/latest/";
+CONSTANTS.VPLAN.API = "https://api.zlyfer.net/vplan/all/";
 
 module.exports = CONSTANTS;

@@ -4,7 +4,6 @@
       <hr class="my-4" />
       <p>
         Dies ist die neuste überarbeitete Version. Von Zeit zu Zeit werden alle alten bekannten Features implementiert.
-        Test
       </p>
       <b-button variant="primary" target="_blank" href="https://old.zlyfer.net">
         Alte Version
