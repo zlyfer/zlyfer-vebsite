@@ -1,4 +1,6 @@
 ﻿<template>
+  <!-- TODO: Make date filter centered. -->
+  <!-- TODO: Load on demand and not everything at once. -->
   <div id="vplan">
     <b-card no-body id="tableCard">
       <b-card-header header-tag="nav" id="tableCardHeader">
@@ -96,8 +98,8 @@ export default {
   methods: {
     loadDates() {
       // Get Available Dates:
-      this.currentBusy = CONSTANTS.VPLAN.API + "dates/";
-      axios.get(CONSTANTS.VPLAN.API + "dates/").then((r) => {
+      this.currentBusy = CONSTANTS.VPLAN.API_DATES;
+      axios.get(CONSTANTS.VPLAN.API_DATES).then((r) => {
         let dates = [];
         Object.keys(r.data.entries).forEach((date) => {
           dates.push({
@@ -121,7 +123,6 @@ export default {
           "day",
           `${dates[dates.length - 1].id.split(", ")[0]} ${dates[dates.length - 1].id.split(", ")[1].substr(0, 2)}.`
         );
-        this.isBusy = false;
       });
     },
     getDatesSelectKeys(key) {
@@ -154,58 +155,87 @@ export default {
         case "day":
           this.datesSelect.cday = value;
           if (value != "Tag")
-            this.activePlan = `${this.datesSelect.cday.split(" ")[0]}, ${this.datesSelect.cday
-              .split(" ")[1]
-              .substr(0, 2)}.${this.datesSelect.cmonth}.${this.datesSelect.cyear}`;
-
+            if (
+              !Object.keys(this.plans).includes(
+                `${this.datesSelect.cday.split(" ")[0]}, ${this.datesSelect.cday.split(" ")[1].substr(0, 2)}.${
+                  this.datesSelect.cmonth
+                }.${this.datesSelect.cyear}`
+              )
+            )
+              this.getPlan(
+                CONSTANTS.VPLAN.API +
+                  `${this.datesSelect.cday.split(" ")[1].substr(0, 2)}${this.datesSelect.cmonth}${
+                    this.datesSelect.cyear
+                  }/`
+              );
+            else
+              this.activePlan = `${this.datesSelect.cday.split(" ")[0]}, ${this.datesSelect.cday
+                .split(" ")[1]
+                .substr(0, 2)}.${this.datesSelect.cmonth}.${this.datesSelect.cyear}`;
           break;
         default:
           break;
       }
     },
+    getPlan(api) {
+      // Get Actual Tables:
+      this.currentBusy = api;
+      this.isBusy = true;
+      // this.plans = [];
+      axios.get(api).then((r) => {
+        // Split entries into different days:
+        r.data.entries.forEach((e) => {
+          if (!Object.keys(this.plans).includes(e["Datum"])) {
+            this.plans[e["Datum"]] = [];
+          }
+          let exists = this.plans[e["Datum"]].find((t) => {
+            let tmp = JSON.parse(JSON.stringify(t));
+            delete tmp._cellVariants;
+            if (tmp["Info"] == "Keine Information") tmp["Info"] = "N/A";
+            return JSON.stringify(tmp) == JSON.stringify(e);
+          });
+          if (!exists) {
+            this.plans[e["Datum"]].push(e);
+          }
+        });
+        // Style rows and cells:
+        // TODO: Optimize: Only apply this for the received data not everything again.
+        for (let plan in this.plans) {
+          plan = this.plans[plan];
+          let currentkurs = {
+            name: "",
+            variant: true,
+          };
+          plan.forEach((e) => {
+            // Color-Code same "Kurs"-Keys:
+            if (e.Kurs != currentkurs.name) {
+              currentkurs.name = e.Kurs;
+              currentkurs.variant = !currentkurs.variant;
+            }
+            if (e.Kurs == currentkurs.name) {
+              currentkurs.name = e.Kurs;
+              e._cellVariants = {
+                Kurs: currentkurs.variant ? "warning" : "info",
+              };
+            }
+            // Color "Entfall" red:
+            if (e.Info == "Entfall") e._cellVariants = { ...e._cellVariants, Info: "danger" };
+            // If "N/A" anywhere, convert to "Keine Information" in italic:
+            for (let key in e)
+              if (!key.startsWith("_") && e[key] == "N/A") {
+                e[key] = "Keine Information";
+              }
+          });
+        }
+        this.activePlan = `${this.datesSelect.cday.split(" ")[0]}, ${this.datesSelect.cday
+          .split(" ")[1]
+          .substr(0, 2)}.${this.datesSelect.cmonth}.${this.datesSelect.cyear}`;
+        this.isBusy = false;
+      });
+    },
   },
   mounted() {
-    // Get Actual Tables:
-    this.currentBusy = CONSTANTS.VPLAN.API;
-    axios.get(CONSTANTS.VPLAN.API).then((r) => {
-      // Split entries into different days:
-      r.data.entries.forEach((e) => {
-        if (!Object.keys(this.plans).includes(e["Datum"])) {
-          this.plans[e["Datum"]] = [];
-        }
-        this.plans[e["Datum"]].push(e);
-      });
-
-      // Style rows and cells:
-      for (let plan in this.plans) {
-        plan = this.plans[plan];
-        let currentkurs = {
-          name: "",
-          variant: true,
-        };
-        plan.forEach((e) => {
-          // Color-Code same "Kurs"-Keys:
-          if (e.Kurs != currentkurs.name) {
-            currentkurs.name = e.Kurs;
-            currentkurs.variant = !currentkurs.variant;
-          }
-          if (e.Kurs == currentkurs.name) {
-            currentkurs.name = e.Kurs;
-            e._cellVariants = {
-              Kurs: currentkurs.variant ? "warning" : "info",
-            };
-          }
-          // Color "Entfall" red:
-          if (e.Info == "Entfall") e._cellVariants = { ...e._cellVariants, Info: "danger" };
-          // If "N/A" anywhere, convert to "Keine Information" in italic:
-          for (let key in e)
-            if (!key.startsWith("_") && e[key] == "N/A") {
-              e[key] = "Keine Information";
-            }
-        });
-      }
-      this.loadDates();
-    });
+    this.loadDates();
   },
 };
 </script>
