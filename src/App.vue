@@ -1,26 +1,26 @@
 ﻿<template>
-	<div id="app">
-		<navbar />
-		<router-view></router-view>
-	</div>
+  <div id="app">
+    <navbar />
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-	import navbar from "@/components/navbar.vue";
+  import navbar from "@/components/navbar.vue";
 
-	export default {
-		name: "app",
-		components: {
-			navbar
-		}
-	};
+  export default {
+    name: "app",
+    components: {
+      navbar,
+    },
+  };
 </script>
 
 <style>
-	div#app {
-		padding: 0;
-		margin: 0;
-		width: 100%;
-		min-height: 100vh;
-	}
+  div#app {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+  }
 </style>
