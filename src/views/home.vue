@@ -9,6 +9,31 @@
         Alte Version
       </b-button>
     </b-jumbotron>
+    <!-- <b-card
+      class="modules"
+      title="MODULE_TITLE"
+      img-src="./img/_placeholder.png"
+      img-alt="MODULE_IMAGE_ALT"
+      footer-bg-variant="success"
+    >
+      <template v-slot:header>
+        <b-badge pill @click="showTagInfo('german')" variant="secondary">GERMAN</b-badge>
+        <b-badge pill @click="showTagInfo('english')" variant="secondary">ENGLISH</b-badge>
+        <b-badge pill @click="showTagInfo('discontinued')" variant="danger">DISCONTINUED</b-badge>
+        <b-badge pill @click="showTagInfo('wip')" variant="warning">WIP</b-badge>
+        <b-badge pill @click="showTagInfo('finished')" variant="success">FINISHED</b-badge>
+        <b-badge pill @click="showTagInfo('github')" variant="dark">GITHUB</b-badge>
+      </template>
+      <b-card-text>
+        MODULE_TEXT
+      </b-card-text>
+      <template v-slot:footer>
+        <b-button-group class="card-link">
+          <b-button variant="dark" class="visit github">GitHub</b-button>
+          <b-button variant="light" class="visit module" to="MODULE_URL">MODULE_NAME</b-button>
+        </b-button-group>
+      </template>
+    </b-card> -->
   </div>
 </template>
 
@@ -17,27 +42,13 @@
     data() {
       return {};
     },
+    methods: {
+      showTagInfo(tag) {
+        this.$parent.showTagInfo(tag);
+      },
+    },
     mounted() {},
   };
 </script>
 
-<style>
-  :root {
-    --accent-color: hsl(215, 90%, 60%);
-    --light-accent-color: hsl(215, 90%, 65%);
-    --dark-accent-color: hsl(215, 90%, 55%);
-    --background-color: #ffffff;
-  }
-  *::-webkit-scrollbar-track {
-    background-color: var(--background-color);
-  }
-  *::-webkit-scrollbar {
-    width: 15px;
-  }
-  *::-webkit-scrollbar-thumb {
-    background-color: var(--light-accent-color);
-  }
-  *::-webkit-scrollbar-thumb:hover {
-    background-color: var(--dark-accent-color);
-  }
-</style>
+<style scoped></style>

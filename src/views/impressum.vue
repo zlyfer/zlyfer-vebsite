@@ -22,6 +22,10 @@
                 <b-col cols="4"></b-col>
                 <b-col>36037 Fulda</b-col>
               </b-row>
+              <b-row>
+                <b-col cols="4"></b-col>
+                <b-col>Germany</b-col>
+              </b-row>
             </b-container>
           </b-card>
           <b-card title="Use of Cookies">
@@ -69,16 +73,25 @@
               the <a href="https://cookiepolicygenerator.com">GDPR Cookies Policy Generator</a>.
             </b-card-text>
           </b-card>
-          <b-card title="Google Fonts">
+          <b-card title="Fonts">
             <b-card-text
-              >This website uses some fonts and icons from Google Fonts.<br />
-              <a href="https://fonts.google.com/">Google Fonts</a> for more information.</b-card-text
-            >
+              >This website uses some fonts and icons from Google Fonts. Visit
+              <a href="https://fonts.google.com/">Google Fonts</a> for more information.<br />
+              Credits to the font used in my logos & banners are below!
+            </b-card-text>
           </b-card>
           <b-card title="Vue Bootstrap">
             <b-card-text
-              >This site uses Vue Bootstrap.<br />Visit <a href="https://bootstrap-vue.org/">Vue Bootstrap</a> to
-              receive more information.</b-card-text
+              >This site uses Vue Bootstrap. Visit <a href="https://bootstrap-vue.org/">Vue Bootstrap</a> for more
+              information.</b-card-text
+            >
+          </b-card>
+          <b-card title="Logo & Banner">
+            <b-card-text
+              >The font used in my logos and banners is a slightly modified version of
+              <a href="https://fonts2u.com/scriber-bold-stencil.font">Scriber Bold Stencil</a> from
+              <a href="https://fonts2u.com/font-designers/jonathan-hill.html">Jonathan Hill</a>. Their website:
+              <a href="http://www.thenorthernblock.co.uk/">thenorthernblock.co.uk</a>!</b-card-text
             >
           </b-card>
           <b-card title="GitHub">
@@ -98,6 +111,11 @@
   export default {
     data() {
       return {};
+    },
+    methods: {
+      showTagInfo(tag) {
+        this.$parent.showTagInfo(tag);
+      },
     },
     mounted() {},
   };

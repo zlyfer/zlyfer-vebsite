@@ -9,6 +9,11 @@
     data() {
       return {};
     },
+    methods: {
+      showTagInfo(tag) {
+        this.$parent.showTagInfo(tag);
+      },
+    },
     mounted() {},
   };
 </script>

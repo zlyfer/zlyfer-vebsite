@@ -258,7 +258,6 @@
   .b-table {
     margin-bottom: 0 !important;
     min-height: 100% !important;
-    height: 100% !important;
   }
   .table-responsive {
     margin-bottom: 0 !important;
@@ -271,7 +270,7 @@
   }
   #tableCardBody {
     padding: 0 !important;
-    height: calc(100vh - 56px - 64px - 64px) !important;
+    /* height: calc(100vh - 56px - 64px - 64px) !important; */
   }
   #loadingSpinner,
   #loadingText {
