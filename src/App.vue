@@ -79,6 +79,9 @@
   *::-webkit-scrollbar-thumb:hover {
     background-color: hsl(100, 61%, 33%);
   }
+  body {
+    background-color: #ececec !important;
+  }
   div#app {
     padding: 0;
     margin: 0;
@@ -86,27 +89,30 @@
   }
   #routerview {
     overflow-y: auto;
-    height: calc(100vh - 56px - 64px - 64px) !important;
-    min-height: calc(100vh - 56.8125px);
+    height: calc(100vh - (56.5px * 2)) !important;
+    min-height: calc(100vh - (56.5px * 2));
   }
   div.card.modules {
-    width: 42.5%;
+    min-width: 42.5%;
+    width: 815px;
+    max-width: 90%;
     float: left;
     margin-left: 5%;
     margin-top: 50px;
-    transition: box-shadow 0.3s ease;
   }
   div.card.modules:last-child {
     margin-bottom: 50px;
   }
-  div.card.modules:hover {
-    /* Source: https://gist.github.com/serglo/f9f0be9a66fd6755a0bda85f9c64e85f */
-    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 8px 0 rgba(0, 0, 0, 0.2);
-  }
   a.btn.visit.module::before {
     content: "Visit ";
   }
+  .visit {
+    font-weight: bold !important;
+  }
   .visit.module {
+    color: var(--success);
+  }
+  .visit.module:hover {
     color: var(--success);
   }
   .visit.github {
@@ -120,6 +126,7 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     margin-right: 5px;
+    border: 1px solid transparent;
   }
   span.badge:hover {
     filter: brightness(1.1);
