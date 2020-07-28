@@ -8,17 +8,23 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item to="/games"><b-icon-controller class="h3 mb-0"></b-icon-controller> Games </b-nav-item>
-          <b-nav-item to="/visual-demonstrations">
+          <b-nav-item class="top" to="/games"
+            ><b-icon-controller class="h3 mb-0"></b-icon-controller> Games
+          </b-nav-item>
+          <b-nav-item class="top" to="/visual-demonstrations">
             <b-icon-image-alt class="h3 mb-0"></b-icon-image-alt>Visual Demonstrations
           </b-nav-item>
-          <b-nav-item to="/bbs2-emden"> <b-icon-building class="h3 mb-0"></b-icon-building> BBS2 Emden </b-nav-item>
-          <b-nav-item to="/miscellaneous">
+          <b-nav-item class="top" to="/bbs2">
+            <b-icon-building class="h3 mb-0"></b-icon-building> BBS II Emden
+          </b-nav-item>
+          <b-nav-item class="top" to="/miscellaneous">
             <b-icon-columns-gap class="h3 mb-0"></b-icon-columns-gap>Miscellaneous</b-nav-item
           >
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
-          <b-nav-item to="/impressum"><b-icon-file-text class="h3 mb-0"></b-icon-file-text> Impressum </b-nav-item>
+          <b-nav-item class="top" to="/impressum"
+            ><b-icon-file-text class="h3 mb-0"></b-icon-file-text> Impressum
+          </b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -85,7 +91,7 @@
     width: auto;
     float: left;
   }
-  .nav-item,
+  .nav-item.top,
   .navbar-brand {
     border-radius: 5px;
   }

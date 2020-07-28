@@ -74,7 +74,7 @@
     width: 8px;
   }
   *::-webkit-scrollbar-thumb {
-    background-color: hsl(100, 61%, 3%);
+    background-color: #161616;
   }
   *::-webkit-scrollbar-thumb:hover {
     background-color: hsl(100, 61%, 33%);
@@ -89,8 +89,8 @@
   }
   #routerview {
     overflow-y: auto;
-    height: calc(100vh - (56.5px * 2)) !important;
-    min-height: calc(100vh - (56.5px * 2));
+    height: calc(100vh - (56.5px * 2 + 10px)) !important;
+    min-height: calc(100vh - (56.5px * 2 + 10px));
   }
   div.card.modules {
     min-width: 42.5%;
@@ -135,5 +135,14 @@
     font-weight: bold;
     color: #424242;
     font-size: 1.64rem;
+  }
+  div.toast,
+  header.toast-header {
+    backdrop-filter: blur(5px);
+    filter: opacity(0.8);
+  }
+  div.b-toast:hover div.toast,
+  header.toast-header {
+    filter: opacity(1);
   }
 </style>

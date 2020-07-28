@@ -1,9 +1,9 @@
 <template>
-  <div id="bbs2-emden">
+  <div id="bbs2">
     <b-card
       class="modules"
       title="Vertretungsplan"
-      img-src="./img/bbs2-emden/vertretungsplan.png"
+      img-src="./img/bbs2/vertretungsplan.png"
       img-alt="Vertretungsplan"
       footer-bg-variant="success"
     >
@@ -16,7 +16,7 @@
       </b-card-text>
       <template v-slot:footer>
         <b-button-group class="card-link">
-          <b-button variant="light" class="visit module" to="/bbs2-emden/vplan">Vertretungsplan</b-button>
+          <b-button variant="light" class="visit module" to="/bbs2/vplan">Vertretungsplan</b-button>
         </b-button-group>
       </template>
     </b-card>
@@ -36,7 +36,7 @@
       </b-card-text>
       <template v-slot:footer>
         <b-button-group class="card-link">
-          <b-button variant="light" class="visit module" to="/bbs2-emden/vplan-api">Vertretungsplan API</b-button>
+          <b-button variant="light" class="visit module" to="/bbs2/vplan-api">Vertretungsplan API</b-button>
         </b-button-group>
       </template>
     </b-card>

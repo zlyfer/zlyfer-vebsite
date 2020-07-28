@@ -11,9 +11,9 @@ import games from "@/views/games/main.vue";
 
 import visual_demonstrations from "@/views/visual-demonstrations/main.vue";
 
-import bbs2_main from "@/views/bbs2-emden/main.vue";
-import bbs2_vplan from "@/views/bbs2-emden/vplan.vue";
-import bbs2_vplan_api from "@/views/bbs2-emden/vplan_api.vue";
+import bbs2_main from "@/views/bbs2/main.vue";
+import bbs2_vplan from "@/views/bbs2/vplan.vue";
+import bbs2_vplan_api from "@/views/bbs2/vplan_api.vue";
 
 import miscellaneous from "@/views/miscellaneous/main.vue";
 
@@ -27,9 +27,9 @@ export default new VueRouter({
     { path: "/404", component: error404 },
     { path: "/games", component: games },
     { path: "/visual-demonstrations", component: visual_demonstrations },
-    { path: "/bbs2-emden", component: bbs2_main },
-    { path: "/bbs2-emden/vplan", component: bbs2_vplan },
-    { path: "/bbs2-emden/vplan-api", component: bbs2_vplan_api },
+    { path: "/bbs2", component: bbs2_main },
+    { path: "/bbs2/vplan", component: bbs2_vplan },
+    { path: "/bbs2/vplan-api", component: bbs2_vplan_api },
     { path: "/miscellaneous", component: miscellaneous },
     { path: "*", redirect: "/404" },
   ],

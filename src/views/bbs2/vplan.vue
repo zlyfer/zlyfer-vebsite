@@ -5,50 +5,44 @@
       <b-card-header header-tag="nav" id="tableCardHeader">
         <b-button-toolbar key-nav>
           <b-container>
-            <b-row>
-              <b-col></b-col>
-              <b-col cols="5">
-                <b-button-group>
-                  <b-button id="datefilter" variant="primary">Datum Filter</b-button>
-                  <b-dropdown :text="datesSelect.cyear" variant="outline-primary">
-                    <b-dropdown-item
-                      v-for="year in getDatesSelectKeys('years')"
-                      v-on:click="setDatesSelectKeys('year', year)"
-                      :key="year"
-                      :active="datesSelect.cyear == year"
-                      :disabled="year == 'Jahr'"
-                      >{{ year }}</b-dropdown-item
-                    >
-                  </b-dropdown>
-                  <b-dropdown v-if="datesSelect.cyear != 'Jahr'" :text="datesSelect.cmonth" variant="outline-primary">
-                    <b-dropdown-item
-                      v-for="month in getDatesSelectKeys('months')"
-                      v-on:click="setDatesSelectKeys('month', month)"
-                      :key="month"
-                      :active="datesSelect.cmonth == month"
-                      :disabled="month == 'Monat'"
-                      >{{ month }}</b-dropdown-item
-                    >
-                  </b-dropdown>
-                  <b-dropdown
-                    v-if="datesSelect.cmonth != 'Monat'"
-                    :text="datesSelect.cday"
-                    dropright
-                    variant="outline-primary"
-                  >
-                    <b-dropdown-item
-                      v-for="day in getDatesSelectKeys('days')"
-                      v-on:click="setDatesSelectKeys('day', day)"
-                      :key="day"
-                      :active="datesSelect.cday == day"
-                      :disabled="day == 'Tag'"
-                      >{{ day }}</b-dropdown-item
-                    >
-                  </b-dropdown>
-                </b-button-group>
-              </b-col>
-              <b-col></b-col>
-            </b-row>
+            <b-button-group>
+              <b-button id="datefilter" variant="primary">Datum Filter</b-button>
+              <b-dropdown :text="datesSelect.cyear" variant="outline-primary">
+                <b-dropdown-item
+                  v-for="year in getDatesSelectKeys('years')"
+                  v-on:click="setDatesSelectKeys('year', year)"
+                  :key="year"
+                  :active="datesSelect.cyear == year"
+                  :disabled="year == 'Jahr'"
+                  >{{ year }}</b-dropdown-item
+                >
+              </b-dropdown>
+              <b-dropdown v-if="datesSelect.cyear != 'Jahr'" :text="datesSelect.cmonth" variant="outline-primary">
+                <b-dropdown-item
+                  v-for="month in getDatesSelectKeys('months')"
+                  v-on:click="setDatesSelectKeys('month', month)"
+                  :key="month"
+                  :active="datesSelect.cmonth == month"
+                  :disabled="month == 'Monat'"
+                  >{{ month }}</b-dropdown-item
+                >
+              </b-dropdown>
+              <b-dropdown
+                v-if="datesSelect.cmonth != 'Monat'"
+                :text="datesSelect.cday"
+                dropright
+                variant="outline-primary"
+              >
+                <b-dropdown-item
+                  v-for="day in getDatesSelectKeys('days')"
+                  v-on:click="setDatesSelectKeys('day', day)"
+                  :key="day"
+                  :active="datesSelect.cday == day"
+                  :disabled="day == 'Tag'"
+                  >{{ day }}</b-dropdown-item
+                >
+              </b-dropdown>
+            </b-button-group>
           </b-container>
         </b-button-toolbar>
       </b-card-header>
@@ -270,7 +264,6 @@
   }
   #tableCardBody {
     padding: 0 !important;
-    /* height: calc(100vh - 56px - 64px - 64px) !important; */
   }
   #loadingSpinner,
   #loadingText {

@@ -9,7 +9,7 @@
         Alte Version
       </b-button>
     </b-jumbotron>
-    <!-- <b-card
+    <b-card
       class="modules"
       title="MODULE_TITLE"
       img-src="./img/_placeholder.png"
@@ -33,7 +33,7 @@
           <b-button variant="light" class="visit module" to="MODULE_URL">MODULE_NAME</b-button>
         </b-button-group>
       </template>
-    </b-card> -->
+    </b-card>
   </div>
 </template>
 
