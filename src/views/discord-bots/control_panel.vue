@@ -201,7 +201,7 @@
                     autocomplete="off"
                     list="triggerChannel-list"
                     v-on:change="config.triggerchannel = idOnly($event)"
-                    :value="getNameOfId(config.triggerchannel, meta.channels) + config.triggerchannel"
+                    :value="getNameOfId(config.triggerchannel, meta.channels) + ': ' + config.triggerchannel"
                     placeholder="Voice ID"
                   >
                   </b-input>
@@ -262,7 +262,7 @@
                     autocomplete="off"
                     list="voiceCategory-list"
                     v-on:change="config.vcategory = idOnly($event)"
-                    :value="getNameOfId(config.vcategory, meta.channels) + config.vcategory"
+                    :value="getNameOfId(config.vcategory, meta.channels) + ': ' + config.vcategory"
                     placeholder="Category ID"
                   >
                   </b-input>
@@ -328,7 +328,7 @@
                     autocomplete="off"
                     list="textCategory-list"
                     v-on:change="config.tcategory = idOnly($event)"
-                    :value="getNameOfId(config.tcategory, meta.channels) + config.tcategory"
+                    :value="getNameOfId(config.tcategory, meta.channels) + ': ' + config.tcategory"
                     placeholder="Category ID"
                     v-b-tooltip.hover.top="`The category the text channels will be placed in`"
                   >
