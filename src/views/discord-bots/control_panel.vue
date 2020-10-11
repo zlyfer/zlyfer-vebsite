@@ -1,6 +1,27 @@
 <template>
   <div id="control_panel">
     <b-row class="m-1">
+      <b-col v-if="loggedIn">
+        <b-card
+          header="Info"
+          sub-title="Info and Status Updates (Click to Minimize!)"
+          style="cursor: pointer; text-align: center; font-weight: bold;"
+          border-variant="info"
+          header-bg-variant="info"
+          header-text-variant="light"
+          class="m-3"
+          v-on:click="showInfoBody = !showInfoBody"
+        >
+          <div v-if="showInfoBody" style="text-align: left !important; font-weight: initial;">
+            Changes can take up to <strong>60 seconds</strong> to be applied! Changes will not be applied to currently
+            existing dynamic channels at the moment (subject to change)! In the meantime please just delete the existing
+            dynamic channels (just leave until empty) and create new ones. <br />
+            <strong> Advanced permissions will come soon (hopefully)!</strong>
+          </div>
+        </b-card>
+      </b-col>
+    </b-row>
+    <b-row class="m-1">
       <b-col>
         <b-card
           header="Authenticate"
@@ -52,7 +73,7 @@
         </b-card>
       </b-col>
 
-      <b-col>
+      <b-col v-if="loggedIn">
         <b-card
           header="Bot Settings"
           sub-title="General preferences of the bot."
@@ -61,7 +82,6 @@
           border-variant="primary"
           header-bg-variant="light"
           header-text-variant="dark"
-          v-if="loggedIn"
         >
           <b-input-group
             prepend="Custom Prefix"
@@ -91,7 +111,7 @@
         </b-card>
       </b-col>
 
-      <b-col>
+      <b-col v-if="loggedIn">
         <b-card
           header="Control Roles"
           sub-title="Roles that can control the bot and generate a new token."
@@ -100,7 +120,6 @@
           border-variant="primary"
           header-bg-variant="light"
           header-text-variant="dark"
-          v-if="loggedIn"
         >
           <b-list-group style="text-align: left; max-height: 30vh; !important; overflow-y: scroll;">
             <b-list-group-item class="controlRole">
@@ -130,26 +149,6 @@
               Only the server owner can control the bot.
             </b-list-group-item>
           </b-list-group>
-        </b-card>
-      </b-col>
-
-      <b-col>
-        <b-card
-          header="Info"
-          sub-title="Info and Status Updates (Click to Minimize!)"
-          style="cursor: pointer; text-align: center; font-weight: bold;"
-          border-variant="info"
-          header-bg-variant="info"
-          header-text-variant="light"
-          class="m-3"
-          v-on:click="showInfoBody = !showInfoBody"
-        >
-          <div v-if="showInfoBody" style="text-align: left !important; font-weight: initial;">
-            Changes can take up to <strong>60 seconds</strong> to be applied! Changes will not be applied to currently
-            existing dynamic channels at the moment (subject to change)! In the meantime please just delete the existing
-            dynamic channels (just leave until empty) and create new ones. <br />
-            <strong> Advanced permissions will come soon (hopefully)!</strong>
-          </div>
         </b-card>
       </b-col>
     </b-row>
@@ -574,7 +573,7 @@
               configid: id,
             },
           })
-          .then(this.updateAll())
+          .then(this.updateAll)
           .catch(console.warn);
       },
       updateAll() {
@@ -628,7 +627,7 @@
             token: this.auth.token,
           })
           .then((r) => {
-            this.controlRoles = r.data.items;
+            if (r.data.items) this.controlRoles = r.data.items;
           })
           .catch(console.warn);
       },
