@@ -26,7 +26,7 @@
         <b-card
           header="Authenticate"
           sub-title="Login with your credentials to authenticate."
-          style="text-align: center; font-weight: bold;"
+          style="text-align: center; font-weight: bold; min-height: 260px;"
           border-variant="primary"
           header-bg-variant="primary"
           header-text-variant="light"
@@ -77,7 +77,7 @@
         <b-card
           header="Bot Settings"
           sub-title="General preferences of the bot."
-          style=" text-align: center; font-weight: bold;"
+          style=" text-align: center; font-weight: bold; min-height: 260px;"
           class="m-3"
           border-variant="primary"
           header-bg-variant="light"
@@ -115,7 +115,7 @@
         <b-card
           header="Control Roles"
           sub-title="Roles that can control the bot and generate a new token."
-          style="text-align: center; font-weight: bold;"
+          style="text-align: center; font-weight: bold; min-height: 260px;"
           class="m-3"
           border-variant="primary"
           header-bg-variant="light"
@@ -418,7 +418,7 @@
     data() {
       return {
         hideToken: true,
-        showInfoBody: false,
+        showInfoBody: true,
         refresh: false,
         loggedIn: false,
         newControlRole: "",
@@ -578,7 +578,7 @@
       },
       updateAll() {
         this.hideToken = true;
-        this.showInfoBody = false;
+        this.showInfoBody = true;
         this.refresh = false;
         this.loggedIn = false;
         this.guild = {};
