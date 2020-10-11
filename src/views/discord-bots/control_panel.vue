@@ -154,9 +154,11 @@
     </b-row>
 
     <b-row class="m-1" v-if="loggedIn">
-      <b-button variant="success" size="lg" class="m-3" style="width: 100%" v-on:click="newConfig()"
-        >New Configuration</b-button
-      >
+      <b-button variant="success" size="lg" class="m-3" style="width: 100%" v-on:click="newConfig()">
+        New Configuration
+      </b-button>
+    </b-row>
+    <b-row class="m-1" v-if="loggedIn">
       <b-card
         class="m-3"
         v-for="config in configs"
