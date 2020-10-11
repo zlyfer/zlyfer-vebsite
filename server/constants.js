@@ -1,4 +1,6 @@
-﻿const CONSTANTS = {};
+﻿// jshint esversion: 9
+
+const CONSTANTS = {};
 CONSTANTS.ENDPOINT = {};
 
 CONSTANTS.PORT = process.env.PORT || "3001";

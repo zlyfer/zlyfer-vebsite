@@ -5,17 +5,16 @@
   "dependencies": {
     "axios": "^0.19.2",
     "body-parser": "^1.18.3",
-    "bootstrap": "^4.5.0",
-    "bootstrap-vue": "^2.15.0",
+    "bootstrap": "^4.5.2",
+    "bootstrap-vue": "^2.17.3",
     "cookie-parser": "^1.4.5",
     "core-js": "^2.6.5",
     "debug": "~4.1.1",
     "express": "^4.16.4",
     "fs-extra": "8.1.0",
     "morgan": "^1.10.0",
-    "vue": "^2.6.11",
-    "vue-axios": "^2.1.5",
-    "vue-router": "^3.3.4"
+    "vue": "^2.6.12",
+    "vue-router": "^3.4.6"
   },
   "eslintConfig": {
     "root": true,
@@ -41,13 +40,13 @@
     "@vue/cli-plugin-eslint": "^3.12.1",
     "@vue/cli-service": "^3.12.1",
     "babel-eslint": "^10.1.0",
-    "concurrently": "^4.1.0",
+    "concurrently": "^5.3.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.14.1",
     "nodemon": "^1.19.4",
     "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.12"
   },
   "scripts": {
     "start": "concurrently \"yarn start-frontend || npm run start-frontend\" \"yarn start-backend || npm run start-backend\"",

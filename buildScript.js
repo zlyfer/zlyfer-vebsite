@@ -1,3 +1,5 @@
+// jshint esversion: 9
+
 const fs = require("fs");
 const fse = require("fs-extra");
 const childProcess = require("child_process");
@@ -5,7 +7,7 @@ const childProcess = require("child_process");
 // childProcess.execSync("npm install");
 
 if (fs.existsSync("./build")) {
-	fse.removeSync("./build");
+  fse.removeSync("./build");
 }
 
 childProcess.execSync("vue-cli-service build", { stdio: "inherit" });
