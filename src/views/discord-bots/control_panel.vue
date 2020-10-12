@@ -1,6 +1,31 @@
 <template>
   <div id="control_panel">
     <b-row class="m-1">
+      <b-col>
+        <b-alert
+          class="m-3"
+          :show="dismissCountDown"
+          variant="info"
+          @dismissed="dismissCountDown = 0"
+          @dismiss-count-down="countDownChanged"
+        >
+          <h5>Your preferences have been saved! Changes can take up to <strong>60 seconds</strong> to be applied!</h5>
+          <hr />
+          <p>
+            <strong v-if="dismissCountDown > 30">{{ dismissCountDown - 30 }} seconds remaining!</strong>
+            <strong v-if="dismissCountDown <= 30">All changes should be applied now!</strong>
+          </p>
+          <b-progress
+            v-if="dismissCountDown > 30"
+            variant="info"
+            :max="60"
+            :value="dismissCountDown - 30"
+            height="4px"
+          ></b-progress>
+        </b-alert>
+      </b-col>
+    </b-row>
+    <b-row class="m-1">
       <b-col v-if="loggedIn">
         <b-card
           header="Info"
@@ -13,9 +38,9 @@
           v-on:click="showInfoBody = !showInfoBody"
         >
           <div v-if="showInfoBody" style="text-align: left !important; font-weight: initial;">
-            Changes can take up to <strong>60 seconds</strong> to be applied! Changes will not be applied to currently
-            existing dynamic channels at the moment (subject to change)! In the meantime please just delete the existing
-            dynamic channels (just leave until empty) and create new ones. <br />
+            Changes will not be applied to currently existing dynamic channels at the moment (subject to change)! In the
+            meantime please just delete the existing dynamic channels (just leave until empty) and create new ones.
+            <br />
             <strong> Advanced permissions will come soon (hopefully)!</strong>
           </div>
         </b-card>
@@ -80,8 +105,8 @@
           style=" text-align: center; font-weight: bold; min-height: 260px;"
           class="m-3"
           border-variant="primary"
-          header-bg-variant="light"
-          header-text-variant="dark"
+          header-bg-variant="primary"
+          header-text-variant="light"
         >
           <b-input-group
             prepend="Custom Prefix"
@@ -118,8 +143,8 @@
           style="text-align: center; font-weight: bold; min-height: 260px;"
           class="m-3"
           border-variant="primary"
-          header-bg-variant="light"
-          header-text-variant="dark"
+          header-bg-variant="primary"
+          header-text-variant="light"
         >
           <b-list-group style="text-align: left; max-height: 30vh; !important; overflow-y: scroll;">
             <b-list-group-item class="controlRole">
@@ -206,7 +231,11 @@
                   autocomplete="off"
                   list="triggerChannel-list"
                   v-on:change="config.triggerchannel = idOnly($event)"
-                  :value="getNameOfId(config.triggerchannel, meta.channels) + ': ' + config.triggerchannel"
+                  :value="
+                    getNameOfId(config.triggerchannel, meta.channels)
+                      ? getNameOfId(config.triggerchannel, meta.channels) + ': ' + config.triggerchannel
+                      : ''
+                  "
                   placeholder="Voice ID"
                 >
                 </b-input>
@@ -267,7 +296,11 @@
                   autocomplete="off"
                   list="voiceCategory-list"
                   v-on:change="config.vcategory = idOnly($event)"
-                  :value="getNameOfId(config.vcategory, meta.channels) + ': ' + config.vcategory"
+                  :value="
+                    getNameOfId(config.vcategory, meta.channels)
+                      ? getNameOfId(config.vcategory, meta.channels) + ': ' + config.vcategory
+                      : ''
+                  "
                   placeholder="Category ID"
                 >
                 </b-input>
@@ -333,7 +366,11 @@
                   autocomplete="off"
                   list="textCategory-list"
                   v-on:change="config.tcategory = idOnly($event)"
-                  :value="getNameOfId(config.tcategory, meta.channels) + ': ' + config.tcategory"
+                  :value="
+                    getNameOfId(config.tcategory, meta.channels)
+                      ? getNameOfId(config.tcategory, meta.channels) + ': ' + config.tcategory
+                      : ''
+                  "
                   placeholder="Category ID"
                   v-b-tooltip.hover.top="`The category the text channels will be placed in`"
                 >
@@ -419,6 +456,8 @@
   export default {
     data() {
       return {
+        dismissSecs: 90,
+        dismissCountDown: 0,
         hideToken: true,
         showInfoBody: true,
         refresh: false,
@@ -439,6 +478,12 @@
     },
     watch: {},
     methods: {
+      countDownChanged(dismissCountDown) {
+        this.dismissCountDown = dismissCountDown;
+      },
+      showAlert() {
+        this.dismissCountDown = this.dismissSecs;
+      },
       filterChannelType(list, type) {
         return list.filter((e) => e.type == type);
       },
@@ -467,6 +512,7 @@
         else return "Custom";
       },
       newConfig() {
+        this.showAlert();
         axios
           .put(CONSTANTS.DYNCHAN.API + "/config/add/", {
             guildid: this.auth.guildid,
@@ -497,6 +543,7 @@
           .catch(console.warn);
       },
       addRole() {
+        this.showAlert();
         if (!isNaN(this.newControlRole) && this.newControlRole != "")
           axios
             .put(CONSTANTS.DYNCHAN.API + "/role/add/", {
@@ -513,6 +560,7 @@
             .catch(console.warn);
       },
       saveBotSettings() {
+        this.showAlert();
         axios
           .patch(CONSTANTS.DYNCHAN.API + "/guild/change/", {
             guildid: this.auth.guildid,
@@ -524,6 +572,7 @@
           .catch(console.warn);
       },
       deleteControlRole(id) {
+        this.showAlert();
         axios
           .delete(CONSTANTS.DYNCHAN.API + "/role/delete/", {
             data: {
@@ -536,6 +585,7 @@
           .catch(console.warn);
       },
       saveConfig(config) {
+        this.showAlert();
         axios
           .patch(CONSTANTS.DYNCHAN.API + "/config/change/", {
             guildid: this.auth.guildid,
@@ -567,6 +617,7 @@
           .catch(console.warn);
       },
       deleteConfig(id) {
+        this.showAlert();
         axios
           .delete(CONSTANTS.DYNCHAN.API + "/config/delete/", {
             data: {
