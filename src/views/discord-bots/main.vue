@@ -16,9 +16,9 @@
       </b-card-text>
       <template v-slot:footer>
         <b-button-group class="card-link">
-          <b-button variant="light" class="visit module" to="discord-bots/control-panel"
-            >DynChan Control Panel</b-button
-          >
+          <b-button variant="light" class="visit module" to="discord-bots/control-panel">
+            DynChan Control Panel
+          </b-button>
         </b-button-group>
       </template>
     </b-card>

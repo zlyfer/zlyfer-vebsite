@@ -24,10 +24,10 @@
             <b-icon-columns-gap class="h3 mb-0"></b-icon-columns-gap>
             Miscellaneous
           </b-nav-item>
-          <b-nav-item class="top" to="/discord-bots">
+          <!-- <b-nav-item class="top" to="/discord-bots">
             <img src="../assets/discord.svg" alt="" width="28" height="28" title="Bootstrap" />
             Discord Bots
-          </b-nav-item>
+          </b-nav-item> -->
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item class="top" to="/impressum">
