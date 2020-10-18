@@ -1,7 +1,10 @@
 ﻿<template>
   <div id="app">
     <navbar />
-    <router-view id="routerview"></router-view>
+    <router-view
+      :style="'filter: invert(' + invert + ') hue-rotate(' + hue_rotate + 'deg);'"
+      id="routerview"
+    ></router-view>
   </div>
 </template>
 
@@ -47,6 +50,9 @@
             variant: "dark",
           },
         },
+        darkmode: false,
+        invert: 0,
+        hue_rotate: 0,
       };
     },
     methods: {
@@ -59,13 +65,43 @@
           solid: true,
         });
       },
+      toggleDarkMode(change = false) {
+        if (change) {
+          this.darkmode = !this.darkmode;
+          this.$cookies.set("darkmode", this.darkmode);
+        }
+        if (this.darkmode) {
+          document.documentElement.style.setProperty("--bg", "#161616");
+          document.documentElement.style.setProperty("--antibg", "#ececec");
+          this.invert = 1;
+          this.hue_rotate = 180;
+        } else {
+          document.documentElement.style.setProperty("--antibg", "#161616");
+          document.documentElement.style.setProperty("--bg", "#ececec");
+          this.invert = 0;
+          this.hue_rotate = 0;
+        }
+      },
     },
-    mounted() {},
+    mounted() {
+      if (!this.$cookies.isKey("darkmode")) this.$cookies.set("darkmode", false);
+      this.darkmode = this.$cookies.get("darkmode") == "true" ? true : false;
+      this.toggleDarkMode();
+    },
   };
 </script>
 
 <style>
   :root {
+    --bg: #ececec;
+    --antibg: #161616;
+  }
+  body {
+    background-color: var(--bg) !important;
+  }
+  * {
+    /* filter: blur(1px); */
+    transition: filter 0.1s ease-in;
   }
   *::-webkit-scrollbar-track {
     background-color: #fff;
@@ -78,9 +114,6 @@
   }
   *::-webkit-scrollbar-thumb:hover {
     background-color: hsl(100, 61%, 33%);
-  }
-  body {
-    background-color: #ececec !important;
   }
   div#app {
     padding: 0;

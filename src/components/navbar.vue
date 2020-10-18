@@ -30,6 +30,11 @@
           </b-nav-item> -->
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
+          <b-nav-item class="top" @click="toggleDarkMode(true)">
+            <b-icon-brightness-high-fill v-if="$parent.darkmode" class="h3 mb-0"></b-icon-brightness-high-fill>
+            <b-icon-brightness-high v-if="!$parent.darkmode" class="h3 mb-0"></b-icon-brightness-high>
+            <span>{{ $parent.darkmode ? "Light" : "Dark" }} Mode</span>
+          </b-nav-item>
           <b-nav-item class="top" to="/impressum">
             <b-icon-file-text class="h3 mb-0"></b-icon-file-text>
             Impressum
@@ -83,6 +88,11 @@
     data() {
       return {};
     },
+    methods: {
+      toggleDarkMode(change = false) {
+        this.$parent.toggleDarkMode(change);
+      },
+    },
     mounted() {},
   };
 </script>
@@ -95,9 +105,10 @@
     background-size: cover;
   }
   .nav-link {
-    color: white !important;
+    color: #f1f1f1 !important;
   }
   .navbar-brand {
+    color: #f1f1f1 !important;
     text-align: center;
     min-width: 100px;
     width: auto;
