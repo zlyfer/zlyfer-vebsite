@@ -1,5 +1,4 @@
-﻿#!/usr/bin/env node
-// jshint esversion: 9
+﻿// jshint esversion: 9
 /**
  * Module dependencies.
  */

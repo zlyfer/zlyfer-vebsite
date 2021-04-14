@@ -15,11 +15,10 @@
         My own version of the replacement plan of my old school.
       </b-card-text>
       <template v-slot:footer>
-        <b-button-group class="card-link">
-          <b-button variant="light" class="visit module" to="/bbs2/vplan">Vertretungsplan</b-button>
-        </b-button-group>
+        <b-button variant="light" class="visit module" to="/bbs2/vplan">Vertretungsplan</b-button>
       </template>
     </b-card>
+
     <b-card
       class="modules"
       title="Vertretungsplan API"
@@ -35,9 +34,7 @@
         The API of the replacement plan of my old school.
       </b-card-text>
       <template v-slot:footer>
-        <b-button-group class="card-link">
-          <b-button variant="light" class="visit module" to="/bbs2/vplan-api">Vertretungsplan API</b-button>
-        </b-button-group>
+        <b-button variant="light" class="visit module" to="/bbs2/vplan-api">Vertretungsplan API</b-button>
       </template>
     </b-card>
   </div>

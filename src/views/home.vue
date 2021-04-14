@@ -9,12 +9,12 @@
         Alte Version
       </b-button>
     </b-jumbotron>
-    <!-- <b-card
+    <b-card
       class="modules"
       title="MODULE_TITLE"
       img-src="./img/_placeholder.png"
       img-alt="MODULE_IMAGE_ALT"
-      footer-bg-variant="success"
+      footer-bg-variant="danger"
     >
       <template v-slot:header>
         <b-badge pill @click="showTagInfo('german')" variant="secondary">GERMAN</b-badge>
@@ -28,12 +28,11 @@
         MODULE_TEXT
       </b-card-text>
       <template v-slot:footer>
-        <b-button-group class="card-link">
-          <b-button variant="dark" class="visit github">GitHub</b-button>
-          <b-button variant="light" class="visit module" to="MODULE_URL">MODULE_NAME</b-button>
-        </b-button-group>
+        <b-button variant="dark" class="visit github">GitHub</b-button>
+        <b-button variant="light" class="visit module" to="MODULE_URL">MODULE_NAME</b-button>
+        <!-- <b-button-group class="card-link"> </b-button-group> -->
       </template>
-    </b-card> -->
+    </b-card>
   </div>
 </template>
 

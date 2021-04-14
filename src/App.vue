@@ -100,14 +100,14 @@
     background-color: var(--bg) !important;
   }
   * {
-    /* filter: blur(1px); */
     transition: filter 0.1s ease-in;
   }
   *::-webkit-scrollbar-track {
     background-color: #fff;
   }
   *::-webkit-scrollbar {
-    width: 8px;
+    width: 0px;
+    height: 0px;
   }
   *::-webkit-scrollbar-thumb {
     background-color: #161616;
@@ -122,28 +122,44 @@
   }
   #routerview {
     overflow-y: auto;
-    height: calc(100vh - (56.5px * 2 + 10px)) !important;
-    min-height: calc(100vh - (56.5px * 2 + 10px));
+    height: calc(100vh - (60px * 2)) !important;
   }
   div.card.modules {
-    min-width: 42.5%;
-    width: 815px;
-    max-width: 90%;
+    width: 100%;
+    max-width: 960px;
     float: left;
-    margin-left: 5%;
-    margin-top: 50px;
+    /* margin-top: 50px; */
+    border: none;
+  }
+  img.card-img {
+    border-radius: 0px;
   }
   div.card.modules:last-child {
     margin-bottom: 50px;
   }
+  a.btn.visit,
+  button.visit {
+    display: block;
+    border-radius: 0;
+    height: 45px;
+    line-height: 32px;
+  }
   a.btn.visit.module::before {
     content: "Visit ";
   }
+  div.card-footer {
+    padding: 0;
+    border-top: none;
+  }
   .visit {
-    font-weight: bold !important;
+    font-weight: 200px !important;
+    min-width: 100%;
+    float: left;
   }
   .visit.module {
-    color: var(--success);
+    background-color: var(--success);
+    color: var(--light);
+    border: none;
   }
   .visit.module:hover {
     color: var(--success);

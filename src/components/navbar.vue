@@ -1,13 +1,17 @@
 ﻿<template>
   <div id="navbar">
     <b-navbar toggleable="md" type="dark" fixed="top">
-      <b-navbar-brand to="/">
+      <!-- <b-navbar-brand to="/">
         <b-icon-house class="h3 mb-0"></b-icon-house>
         Home
-      </b-navbar-brand>
+      </b-navbar-brand> -->
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav>
+        <b-navbar-nav class="top">
+          <b-nav-item class="top" to="/">
+            <b-icon-house class="h3 mb-0"></b-icon-house>
+            Home
+          </b-nav-item>
           <b-nav-item class="top" to="/games">
             <b-icon-controller class="h3 mb-0"></b-icon-controller>
             Games
@@ -25,7 +29,7 @@
             Miscellaneous
           </b-nav-item>
           <!-- <b-nav-item class="top" to="/discord-bots">
-            <img src="../assets/discord.svg" alt="" width="28" height="28" title="Bootstrap" />
+            <img src="../assets/discord.svg" alt="" width="28" height="28" title="Discord" />
             Discord Bots
           </b-nav-item> -->
         </b-navbar-nav>
@@ -35,9 +39,9 @@
             <b-icon-brightness-high v-if="!$parent.darkmode" class="h3 mb-0"></b-icon-brightness-high>
             <span>{{ $parent.darkmode ? "Light" : "Dark" }} Mode</span>
           </b-nav-item>
-          <b-nav-item class="top" to="/impressum">
+          <b-nav-item class="top" to="/imprint">
             <b-icon-file-text class="h3 mb-0"></b-icon-file-text>
-            Impressum
+            Imprint
           </b-nav-item>
         </b-navbar-nav>
       </b-collapse>
@@ -98,11 +102,14 @@
 </script>
 
 <style scoped>
-  nav {
+  nav.fixed-top {
     background-color: #161611 !important;
     background-image: url("../assets/navbar.svg");
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  nav.fixed-bottom {
+    background-color: #161611 !important;
   }
   .nav-link {
     color: #f1f1f1 !important;
@@ -110,29 +117,35 @@
   .navbar-brand {
     color: #f1f1f1 !important;
     text-align: center;
-    min-width: 100px;
+    min-width: 110px;
     width: auto;
+    height: 46px;
     float: left;
   }
   .nav-item.top,
   .navbar-brand {
-    border-radius: 5px;
+    line-height: 30px;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
   }
   .nav-item:hover,
   .navbar-brand:hover {
     background-color: #ffffff22;
     backdrop-filter: blur(10px);
   }
-
+  .navbar {
+    padding: 0;
+    min-height: 45px;
+  }
   div.margin {
-    margin-top: 56.5px;
+    margin-top: 45px;
   }
   .social {
     backdrop-filter: blur(10px);
-    margin: 5px;
-  }
-  .social:hover {
-    filter: opacity(0.6);
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
+    height: 45px;
+    line-height: 30px;
   }
   #github {
     background-color: #24292e;
@@ -157,6 +170,12 @@
   }
   #zlyfah {
     background-color: #7b1fa2;
+  }
+  .social:hover {
+    background-color: #ffffffa1 !important;
+  }
+  .social:hover a {
+    color: #161616ff !important;
   }
   svg {
     margin-right: 5px;
