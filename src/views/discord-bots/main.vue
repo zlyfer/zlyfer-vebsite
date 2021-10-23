@@ -11,15 +11,11 @@
         <b-badge pill @click="showTagInfo('english')" variant="secondary">ENGLISH</b-badge>
         <b-badge pill @click="showTagInfo('wip')" variant="warning">WIP</b-badge>
       </template>
-      <b-card-text>
-        DynChan Control Panel
-      </b-card-text>
+      <b-card-text> DynChan </b-card-text>
       <template v-slot:footer>
-        <b-button-group class="card-link">
-          <b-button variant="light" class="visit module" to="discord-bots/control-panel">
-            DynChan Control Panel
-          </b-button>
-        </b-button-group>
+        <a href="https://dynchan.net/home" target="_blank">
+          <b-button variant="light" class="visit module"> DynChan Website </b-button>
+        </a>
       </template>
     </b-card>
   </div>

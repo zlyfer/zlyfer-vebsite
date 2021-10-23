@@ -14,18 +14,6 @@
                 <b-col cols="4"> <strong>E-Mail</strong> </b-col>
                 <b-col>zlyfer+admin(at)zlyfer.net</b-col>
               </b-row>
-              <b-row>
-                <b-col cols="4"> <strong>Address</strong> </b-col>
-                <b-col>Bahnhofstraße 13</b-col>
-              </b-row>
-              <b-row>
-                <b-col cols="4"></b-col>
-                <b-col>36037 Fulda</b-col>
-              </b-row>
-              <b-row>
-                <b-col cols="4"></b-col>
-                <b-col>Germany</b-col>
-              </b-row>
             </b-container>
           </b-card>
           <b-card title="Use of Cookies">

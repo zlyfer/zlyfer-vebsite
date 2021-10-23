@@ -125,11 +125,16 @@
     height: calc(100vh - (60px * 2)) !important;
   }
   div.card.modules {
-    width: 100%;
-    max-width: 960px;
+    width: calc(50% - 75px);
+    max-width: calc(960px - 50px);
     float: left;
-    /* margin-top: 50px; */
     border: none;
+  }
+  div.card.modules:nth-of-type(odd) {
+    margin: 50px 25px 0 50px;
+  }
+  div.card.modules:nth-of-type(even) {
+    margin: 50px 0 0 25px;
   }
   img.card-img {
     border-radius: 0px;

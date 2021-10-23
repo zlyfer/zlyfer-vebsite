@@ -12,6 +12,10 @@
             <b-icon-house class="h3 mb-0"></b-icon-house>
             Home
           </b-nav-item>
+          <b-nav-item class="top" to="/discord-bots">
+            <img src="../assets/discord.svg" alt="" width="28" height="28" title="Discord" />
+            Discord Bots
+          </b-nav-item>
           <b-nav-item class="top" to="/games">
             <b-icon-controller class="h3 mb-0"></b-icon-controller>
             Games
@@ -28,10 +32,6 @@
             <b-icon-columns-gap class="h3 mb-0"></b-icon-columns-gap>
             Miscellaneous
           </b-nav-item>
-          <!-- <b-nav-item class="top" to="/discord-bots">
-            <img src="../assets/discord.svg" alt="" width="28" height="28" title="Discord" />
-            Discord Bots
-          </b-nav-item> -->
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item class="top" @click="toggleDarkMode(true)">
@@ -52,9 +52,7 @@
       <b-navbar-toggle target="nav-collapse-bot"></b-navbar-toggle>
       <b-collapse id="nav-collapse-bot" is-nav>
         <b-navbar-nav style="width: 100% !important" justified>
-          <b-nav-item class="social" id="github" target="_blank" href="https://github.com/zlyfer">
-            GITHUB
-          </b-nav-item>
+          <b-nav-item class="social" id="github" target="_blank" href="https://github.com/zlyfer"> GITHUB </b-nav-item>
           <b-nav-item
             class="social"
             id="youtube"
@@ -142,8 +140,6 @@
   }
   .social {
     backdrop-filter: blur(10px);
-    /* margin-left: 5px; */
-    /* margin-right: 5px; */
     height: 45px;
     line-height: 30px;
   }

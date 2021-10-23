@@ -13,7 +13,6 @@ import bbs2_vplan from "@/views/bbs2/vplan.vue";
 import bbs2_vplan_api from "@/views/bbs2/vplan_api.vue";
 import miscellaneous from "@/views/miscellaneous/main.vue";
 import discord_bots from "@/views/discord-bots/main.vue";
-import discord_bots_control_panel from "@/views/discord-bots/control_panel.vue";
 
 Vue.use(VueRouter);
 Vue.config.silent = true;
@@ -31,7 +30,6 @@ export default new VueRouter({
     { path: "/bbs2/vplan-api", component: bbs2_vplan_api },
     { path: "/miscellaneous", component: miscellaneous },
     { path: "/discord-bots", component: discord_bots },
-    { path: "/discord-bots/control-panel", component: discord_bots_control_panel },
     { path: "*", redirect: "/404" },
   ],
 });
