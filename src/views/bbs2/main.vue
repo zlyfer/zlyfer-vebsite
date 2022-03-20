@@ -3,7 +3,7 @@
     <b-card
       class="modules"
       title="Vertretungsplan"
-      img-src="./img/bbs2/vertretungsplan.png"
+      img-src="../img/bbs2/vertretungsplan.png"
       img-alt="Vertretungsplan"
       footer-bg-variant="success"
     >
@@ -11,9 +11,7 @@
         <b-badge pill @click="showTagInfo('german')" variant="secondary">GERMAN</b-badge>
         <b-badge pill @click="showTagInfo('wip')" variant="warning">WIP</b-badge>
       </template>
-      <b-card-text>
-        My own version of the replacement plan of my old school.
-      </b-card-text>
+      <b-card-text> My own version of the replacement plan of my old school. </b-card-text>
       <template v-slot:footer>
         <b-button variant="light" class="visit module" to="/bbs2/vplan">Vertretungsplan</b-button>
       </template>
@@ -22,7 +20,7 @@
     <b-card
       class="modules"
       title="Vertretungsplan API"
-      img-src="./img/_placeholder.png"
+      img-src="../img/_placeholder.png"
       img-alt="Vertretungsplan API"
       footer-bg-variant="success"
     >
@@ -30,9 +28,7 @@
         <b-badge pill @click="showTagInfo('german')" variant="secondary">GERMAN</b-badge>
         <b-badge pill @click="showTagInfo('wip')" variant="warning">WIP</b-badge>
       </template>
-      <b-card-text>
-        The API of the replacement plan of my old school.
-      </b-card-text>
+      <b-card-text> The API of the replacement plan of my old school. </b-card-text>
       <template v-slot:footer>
         <b-button variant="light" class="visit module" to="/bbs2/vplan-api">Vertretungsplan API</b-button>
       </template>
