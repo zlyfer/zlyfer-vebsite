@@ -1,1 +1,1 @@
-My Website refreshed in Vue: zlyfer.net (While wip: zlyfa.me).
+My Website refreshed in Vue: zlyfer.net
