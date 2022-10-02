@@ -52,20 +52,23 @@
       <b-navbar-toggle target="nav-collapse-bot"></b-navbar-toggle>
       <b-collapse id="nav-collapse-bot" is-nav>
         <b-navbar-nav style="width: 100% !important" justified>
-          <b-nav-item class="social" id="github" target="_blank" href="https://github.com/zlyfer"> Github </b-nav-item>
-          <b-nav-item class="social" id="youtube" target="_blank" href="https://youtube.com/channel/UCz57bHmcp5TGRY6URQYWLkQ"> Youtube </b-nav-item>
+          <b-nav-item class="social" id="youtube" target="_blank" href="https://youtube.com/channel/UCz57bHmcp5TGRY6URQYWLkQ">
+            Youtube
+          </b-nav-item>
+          <b-nav-item class="social" id="tiktok" target="_blank" href="https://www.tiktok.com/@zlyfer2"> TikTok </b-nav-item>
+          <b-nav-item class="social" id="zlyfah" target="_blank" href="https://twitch.tv/zlyfer2"> Twitch </b-nav-item>
           <b-nav-item class="social" id="instagram" target="_blank" href="https://instagram.com/zlyfer.arts/"> Instagram </b-nav-item>
+          <b-nav-item class="social" id="github" target="_blank" href="https://github.com/zlyfer"> Github </b-nav-item>
           <!-- <b-nav-item class="social" id="spotify" target="_blank" href="https://open.spotify.com/user/zlyfer">
             SPOTIFY
           </b-nav-item> -->
           <!-- <b-nav-item class="social" id="steam" target="_blank" href="https://steamcommunity.com/id/zlyfer/">
             STEAM
           </b-nav-item> -->
-          <b-nav-item class="social" id="deviantart" target="_blank" href="https://deviantart.com/zlyfer"> Deviantart </b-nav-item>
+          <!-- <b-nav-item class="social" id="deviantart" target="_blank" href="https://deviantart.com/zlyfer"> Deviantart </b-nav-item> -->
           <!-- <b-nav-item class="social" id="slyncarli" target="_blank" href="https://twitch.tv/slyncarli">
             TWITCH SLYNCARLI
           </b-nav-item> -->
-          <b-nav-item class="social" id="zlyfah" target="_blank" href="https://twitch.tv/zlyfah"> Twitch </b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -131,6 +134,9 @@
     line-height: 30px;
   }
   #github {
+    background-color: #24292e;
+  }
+  #tiktok {
     background-color: #24292e;
   }
   #youtube {
