@@ -1,10 +1,17 @@
 <template>
   <div id="home">
-    <b-jumbotron header="zlyfer.net!!" lead="Meine persönliche Website mit meinen Projekten">
+    <b-card
+      :header-bg-variant="getDarkMode() ? 'dark' : 'light'"
+      :header-text-variant="getDarkMode() ? 'light' : 'dark'"
+      :bg-variant="getDarkMode() ? 'dark' : 'light'"
+      :text-variant="getDarkMode() ? 'light' : 'dark'"
+    >
+      <b-card-title>zlyfer.net</b-card-title>
+      <b-card-text> My personal website with my projects </b-card-text>
       <hr class="my-4" />
-      <p>Dies ist die neuste überarbeitete Version. Von Zeit zu Zeit werden alle alten bekannten Features implementiert.</p>
-      <b-button variant="primary" target="_blank" href="https://old.zlyfer.net"> Alte Version </b-button>
-    </b-jumbotron>
+      <b-button variant="primary" target="_blank" href="https://old.zlyfer.net"> Old Version </b-button>
+    </b-card>
+
     <!-- <b-card class="modules" title="MODULE_TITLE" img-src="../img/_placeholder.png" img-alt="MODULE_IMAGE_ALT" footer-bg-variant="danger">
       <template v-slot:header>
         <b-badge pill @click="showTagInfo('german')" variant="secondary">GERMAN</b-badge>
@@ -30,6 +37,9 @@
       return {};
     },
     methods: {
+      getDarkMode() {
+        return this.$parent.darkmode;
+      },
       showTagInfo(tag) {
         this.$parent.showTagInfo(tag);
       },

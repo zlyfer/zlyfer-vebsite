@@ -1,7 +1,5 @@
 <template>
-  <div id="miscellaneous">
-    Hello miscellaneous!
-  </div>
+  <div id="miscellaneous">Hello miscellaneous!</div>
 </template>
 
 <script>
@@ -10,6 +8,9 @@
       return {};
     },
     methods: {
+      getDarkMode() {
+        return this.$parent.darkmode;
+      },
       showTagInfo(tag) {
         this.$parent.showTagInfo(tag);
       },

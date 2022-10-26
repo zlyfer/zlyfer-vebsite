@@ -119,7 +119,7 @@
   .nav-item:hover,
   .navbar-brand:hover {
     background-color: #ffffff22;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(30px);
   }
   .navbar {
     padding: 0;

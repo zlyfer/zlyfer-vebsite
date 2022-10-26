@@ -1,10 +1,7 @@
 ﻿<template>
   <div id="app">
     <navbar />
-    <router-view
-      :style="'filter: invert(' + invert + ') hue-rotate(' + hue_rotate + 'deg);'"
-      id="routerview"
-    ></router-view>
+    <router-view :style="'filter: invert(' + invert + ') hue-rotate(' + hue_rotate + 'deg);'" id="routerview"></router-view>
   </div>
 </template>
 
@@ -61,7 +58,7 @@
         this.$bvToast.toast(tinfo.desc, {
           title: tinfo.title,
           variant: tinfo.variant,
-          autoHideDelay: 5000,
+          autoHideDelay: 50000,
           solid: true,
         });
       },
@@ -73,13 +70,13 @@
         if (this.darkmode) {
           document.documentElement.style.setProperty("--bg", "#161616");
           document.documentElement.style.setProperty("--antibg", "#ececec");
-          this.invert = 1;
-          this.hue_rotate = 180;
+          // this.invert = 1;
+          // this.hue_rotate = 180;
         } else {
           document.documentElement.style.setProperty("--antibg", "#161616");
           document.documentElement.style.setProperty("--bg", "#ececec");
-          this.invert = 0;
-          this.hue_rotate = 0;
+          // this.invert = 0;
+          // this.hue_rotate = 0;
         }
       },
     },
@@ -103,7 +100,7 @@
     transition: filter 0.1s ease-in;
   }
   *::-webkit-scrollbar-track {
-    background-color: #fff;
+    background-color: var(--bg);
   }
   *::-webkit-scrollbar {
     width: 0px;
@@ -162,12 +159,14 @@
     float: left;
   }
   .visit.module {
-    background-color: var(--success);
+    /* background-color: var(--success); */
+    background-color: #4caf50;
     color: var(--light);
     border: none;
   }
   .visit.module:hover {
-    color: var(--success);
+    /* color: var(--success); */
+    color: #4caf50;
   }
   .visit.github {
     color: var(--light);
@@ -187,16 +186,15 @@
   }
   h4.card-title {
     font-weight: bold;
-    color: #424242;
     font-size: 1.64rem;
   }
-  div.toast,
-  header.toast-header {
-    backdrop-filter: blur(5px);
-    filter: opacity(0.8);
+
+  /* div.toast {
+    filter: opacity(0.5);
+    backdrop-filter: blur(10px);
   }
   div.b-toast:hover div.toast,
   header.toast-header {
     filter: opacity(1);
-  }
+  } */
 </style>
